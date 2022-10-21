@@ -3,6 +3,7 @@ export default function TextForm(props) {
 
   let btnCss={
     marginRight:"5px",
+    marginBottom:"5px",
   
   }
       
@@ -33,13 +34,13 @@ export default function TextForm(props) {
           placeholder="Enter text here"
         ></textarea>
       </div>
-      <button style={btnCss} className="btn btn-primary" onClick={handleUpClick}>Convert to Uppercase</button>
+      <button style={btnCss} className="btn btn-primary " onClick={handleUpClick}>Convert to Uppercase</button>
       <button style={btnCss}  className="btn btn-primary" onClick={handleDownClick}>Convert to Lowercase</button>
       <button style={btnCss}  className="btn btn-primary" onClick={handleClearText}>Clear Text</button>
       <div className="my-2">
         <h2>Your text summary</h2>
-        <p>{text.split(" ").length-1} words, {text.length} character</p>
-        <p>{(text.split(" ").length-1)*0.008} Minutes to read</p>
+        <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} words, {text.length} character</p>
+        <p>{(text.split(" ").filter((element)=>{return element.length!==0}).length)*0.008} Minutes to read</p>
         <h3>Preview</h3>
         <p>{text}</p>
       </div>

@@ -5,6 +5,10 @@ export default function Navbar(props) {
   const switchStyle = {
     width: "10%",
   };
+  const goDarkStyle = {
+    width: "62px",
+  };
+ 
   return (
     <nav
       className={`navbar navbar-expand-lg bg-${props.mode} text-${props.textColor}`}
@@ -44,20 +48,29 @@ export default function Navbar(props) {
                 {props.about}
               </Link>
             </li>
+            
           </ul>
+          <form className="d-flex" role="search">
+            
+            <div className="form-check form-switch" style={switchStyle}>
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="flexSwitchCheckDefault"
+                  onClick={props.toggleMode}
+                />
+                <label
+                  style={goDarkStyle}
+                  className="form-check-label"
+                  htmlFor="flexSwitchCheckDefault"
+                >
+                  {props.modeName}
+                </label>
+              </div>
+            
+          </form>
         </div>
-      </div>
-      <div className="form-check form-switch" style={switchStyle}>
-        <input
-          className="form-check-input"
-          type="checkbox"
-          role="switch"
-          id="flexSwitchCheckDefault"
-          onClick={props.toggleMode}
-        />
-        <label className="form-check-label" htmlFor="flexSwitchCheckDefault">
-          {props.modeName}
-        </label>
       </div>
     </nav>
   );
