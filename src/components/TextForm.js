@@ -7,7 +7,6 @@ export default function TextForm(props) {
   
   }
       
-  //  console.log(css.btn.marginright)
     const handleOnChange=(event)=>{
         setText(event.target.value)
     }
