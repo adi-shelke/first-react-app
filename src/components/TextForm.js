@@ -38,8 +38,8 @@ export default function TextForm(props) {
       <button style={btnCss}  className="btn btn-primary" onClick={handleClearText}>Clear Text</button>
       <div className="my-2">
         <h2>Your text summary</h2>
-        <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} words, {text.length} character</p>
-        <p>{(text.split(" ").filter((element)=>{return element.length!==0}).length)*0.008} Minutes to read</p>
+        <p>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words, {text.length} character</p>
+        <p>{(text.split(/\s+/).filter((element)=>{return element.length!==0}).length)*0.008} Minutes to read</p>
         <h3>Preview</h3>
         <p>{text}</p>
       </div>
